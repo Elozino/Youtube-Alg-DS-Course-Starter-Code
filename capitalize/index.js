@@ -5,8 +5,21 @@
 //   capitalize("I'm a little tea pot") --> 'I'm A Little Tea Pot'
 //   capitalize('sHoRt AnD sToUt') --> 'Short And Stout'
 
-function capitalize(str) {}
+function capitalize(str) {
+  const string = str.split(" ");
+  let arr = [];
+  // console.log(string)
+  string.forEach((item) => {
+    let capitalizeFirstLetter = item[0].toUpperCase();
+    capitalizeFirstLetter += item.substring(1).toLowerCase();
+    arr.push(capitalizeFirstLetter);
+  });
+  return arr.join(" ");
+}
 
+
+// Time complexity is O(N)
+// Space complexity is O(N)
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
 //    ) (   | (    \/| (    \/   ) (     | (    \/| (   ) || (    \/| (    \/| (    \/

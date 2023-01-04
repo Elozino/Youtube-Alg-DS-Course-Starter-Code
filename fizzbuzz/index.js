@@ -11,7 +11,21 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+function fizzBuzz(n) {
+  // Make it log 1 - 30 i.e (i =1)
+  // Order of arrangement matters
+    for (i = 1; i <= n; i++) {
+    if (i % 5 === 0 && i % 3  === 0) {
+      console.log("fizzbuzz");
+    } else if (i % 5 === 0) {
+      console.log("buzz");
+    } else if (i % 3 === 0) {
+      console.log("fizz");
+    } else {
+      console.log(i);
+    }
+  }
+}
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

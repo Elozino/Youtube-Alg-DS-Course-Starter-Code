@@ -6,7 +6,23 @@
 // chunk(["a", "b", "c", "d"], 2) --> [[ "a", "b"], ["c", "d"]]
 // chunk([0, 1, 2, 3, 4, 5], 4) -->  [[0, 1, 2, 3], [4, 5]]
 
-function chunk(array, size) {}
+function chunk(array, size) {
+  let result = [];
+  let firstArr = [];
+  let secondArr = [];
+  for (let i = 0; i < array.length; i++) {
+    if (firstArr.length < size) {
+      firstArr.push(array[i]);
+    } else {
+      secondArr.push(array[i]);
+    }
+  }
+  result.push([...firstArr]);
+  result.push([...secondArr]);
+  return result;
+}
+//  Time complexity is O(N)
+//  Space complexity is O(N)
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
@@ -38,11 +54,17 @@ describe("Array Chunking", () => {
   it("chunk() works", () => {
     let arr = ["a", "b", "c", "d"];
     let chunked = chunk(arr, 2);
-    assert.deepEqual(chunked, [["a", "b"], ["c", "d"]]);
+    assert.deepEqual(chunked, [
+      ["a", "b"],
+      ["c", "d"],
+    ]);
 
     arr = [0, 1, 2, 3, 4, 5];
     chunked = chunk(arr, 4);
-    assert.deepEqual(chunked, [[0, 1, 2, 3], [4, 5]]);
+    assert.deepEqual(chunked, [
+      [0, 1, 2, 3],
+      [4, 5],
+    ]);
   });
 });
 
