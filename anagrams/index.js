@@ -9,8 +9,20 @@
 //   anagrams('lol', 'lolc') --> False
 
 function anagrams(stringA, stringB) {
-
+    // Test Cases
+    let str1 = stringA.trim().toLowerCase().replace(/[\W_]+/g, "").split("").sort().join("");
+    let str2 = stringB.trim().toLowerCase().replace(/^a-zA-Z0-9 ]/g, "").split("").sort().join("");
+    if (str1 == str2) {
+      console.log(true);
+      return true
+    } else {
+      console.log(false);
+      return false
+    }
 }
+
+// Time complexity is O(N) + O(M)
+// Space complexity is 0(N)
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
