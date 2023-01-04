@@ -4,7 +4,35 @@
 //   reverse('abcd') === 'dcba'
 //   reverse('Hello!') === '!olleH'
 
-function reverse(str) {}
+// METHOD 1
+function reverse(str) {
+  return str.split("").reverse().join("");
+}
+
+// Operation is O(1) and Time Complexity is O(1 )
+// No space usage
+
+// METHOD 2
+// function reverse(str) {
+//   let result = "";
+//   for (let i = 0; i < str.length; i++) {
+//     let char = str[i];
+//     result = char + result;
+//   }
+//   return result;
+// }
+
+// reverse("Zino");
+// Operation is O(n) and Time Complexity is O(n)
+// Space Complexity is O(n)
+
+// METHOD 3
+// function reverse(str) {
+//   return str.split("").reduce((output, value) => {
+//     output = value + output
+//     return output;
+//   }, "");
+// }
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
@@ -29,14 +57,14 @@ function reverse(str) {}
 //                          ______ ______ ______ ______ ______
 //                         |______|______|______|______|______|
 
-mocha.setup('bdd');
+mocha.setup("bdd");
 const { assert } = chai;
 
-describe('String Reversal', () => {
-	it('reverse() correctly reverses string', () => {
-		assert.equal(reverse('ffaa'), 'aaff');
-		assert.equal(reverse('  aaff'), 'ffaa  ');
-	});
+describe("String Reversal", () => {
+  it("reverse() correctly reverses string", () => {
+    assert.equal(reverse("ffaa"), "aaff");
+    assert.equal(reverse("  aaff"), "ffaa  ");
+  });
 });
 
 mocha.run();

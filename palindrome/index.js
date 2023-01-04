@@ -5,7 +5,15 @@
 //   palindrome("Madam") === true
 //   palindrome("love") === false
 
-function palindrome(str) {}
+function palindrome(str) {
+  let reverseString = str.split("").reverse().join("")
+  return reverseString.toLowerCase() === str.toLowerCase() ? true : false
+}
+// Time Complexity is O(n)
+// Space Complexity is O(n)
+
+
+
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
