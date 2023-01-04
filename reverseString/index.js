@@ -9,7 +9,7 @@ function reverse(str) {
   return str.split("").reverse().join("");
 }
 
-// Operation is O(1) and Time Complexity is O(1 )
+// Operation is O(1) and Time Complexity is O(1)
 // No space usage
 
 // METHOD 2

@@ -15,7 +15,7 @@ function reverseInt(n) {
   }
   return value
 }
-// Time complexity is O(log N)
+// Time complexity is O(log N) because if the input is doubled, it will only require one operation
 
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______

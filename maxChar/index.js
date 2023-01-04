@@ -4,14 +4,25 @@
 // maxChar("1337") === "3"
 
 function maxChar(str) {
-  let charCountObject = {}
-  let maxChar = ""
-  let count = 0
+  let charCountObject = {};
+  let maxChar = "";
+  let count = 0;
 
-  for(let i = 0; i < str.length; i++){
-    
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    charCountObject[char] = charCountObject[char] + 1 || 1;
+
+    if (charCountObject[char] > count) {
+      maxChar = char;
+      count = charCountObject[char];
+    }
   }
+  return maxChar
 }
+
+// Time complexity is O(N)
+// Space complexity is O(1) because the character count object (charCountObject) will have at most 26 key-val pairs
+// Note: the maxChar is just a value (the highest character) && count is 0(1)
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
